@@ -12,28 +12,46 @@
             </p>
         </field>
     </record>
-    <record id="form_view_hospital_patient" model="ir.ui.view">
+    <record id="view_hospital_patient_form" model="ir.ui.view">
         <field name="name">hospital.form</field>
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <form>
-                <group>
-                    <field name="name"/>
-                    <field name="age"/>
-                    <field name="gender"/>
-                </group>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="age"/>
+                    </group>
+                    <group>
+                        <field name="ref"/>
+                        <field name="gender"/>
+                    </group>
+                </sheet>
             </form>
         </field>
     </record>
-    <record id="tree_view_hospital_patient" model="ir.ui.view">
+    <record id="view_hospital_patient_tree" model="ir.ui.view">
         <field name="name">hospital.tree</field>
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
+                <field name="name" string="patient name"/>
+                <field name="ref"/>
                 <field name="age"/>
                 <field name="gender"/>
             </tree>
+        </field>
+    </record>
+    <record id="view_hospital_patient_search" model="ir.ui.view">
+        <field name="name">hospital.patient.search</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="patient Name" filter_domain="['|',('name','ilike',self),('ref','ilike',self)]"/>
+                <field name="ref"/>
+                <field name="age"/>
+                <field name="gender"/>
+            </search>
         </field>
     </record>
 </odoo>
