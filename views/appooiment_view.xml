@@ -22,6 +22,8 @@
                     <group>
                         <group>
                             <field name="patient_id"/>
+                            <field name="appooiment_time"/>
+                            <field name="booking_date"/>
                         </group>
                     </group>
                     <div class="oe_chatter">

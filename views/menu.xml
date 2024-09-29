@@ -21,7 +21,7 @@
     <menuitem
             id="menu_patient_appooiment"
             name="patient details"
-            parent="menu_patient_master"
+            parent="menu_hospital_root"
             action="action_hospital_appooiment"
             sequence="1"
     />
@@ -30,6 +30,6 @@
             name="Female patient"
             parent="menu_patient_master"
             action="action_hospital_female_patient"
-            sequence="2"
+            sequence="1"
     />
 </odoo>
