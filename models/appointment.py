@@ -6,5 +6,5 @@ class HospitalAppooiment(models.Model):
     _inherit = "mail.thread", "mail.activity.mixin"
 
     patient_id = fields.Many2one("hospital.patient", string="Patient",)
-    appooiment_time = fields.Date(string = "appooiment time")
-    booking_date = fields.Date(string = "booking date")
+    appooiment_time = fields.Datetime(string = "appooiment time", default=fields.Date.today())
+    booking_date = fields.Date(string = "booking date", default=fields.Date.today())
