@@ -5,7 +5,7 @@
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">hospital.patient</field>
         <field name="view_mode">tree,form</field>
-        <field name="context">{}</field>
+        <field name="context">{'search_default_filter_male': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 خالیه برادر من، خالی!
@@ -19,13 +19,21 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="age"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="age"/>
+                        </group>
+                        <group>
+                            <field name="ref"/>
+                            <field name="gender"/>
+                            <field name="active" invisible="1"/>
+                        </group>
                     </group>
-                    <group>
-                        <field name="ref"/>
-                        <field name="gender"/>
-                    </group>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
                 </sheet>
             </form>
         </field>
@@ -47,10 +55,22 @@
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name" string="patient Name" filter_domain="['|',('name','ilike',self),('ref','ilike',self)]"/>
+                <field name="name" string="patient Name"
+                       filter_domain="['|',('name','ilike',self),('ref','ilike',self)]"/>
                 <field name="ref"/>
                 <field name="age"/>
-                <field name="gender"/>
+                <filter name="filter_male" string="Male" domain="[('gender','=','male')]"/>
+                <filter name="filter_Female" string="Female" domain="[('gender','=','female')]"/>
+                <separator/>
+                <filter name="filter_Kids" string="Kids" domain="[('age','&lt;=', 18)]"/>
+                <separator/>
+                <filter name="filter_archived" string="Archived" domain="[('active','=', False)]"/>
+                <group>
+                    <filter name="group_by_gender" string="Gender" context="{'group_by':'gender'}"/>
+                </group>
+                <searchpanel>
+                    <field name="gender" icon="fa-users" select="multi"/>
+                </searchpanel>
             </search>
         </field>
     </record>

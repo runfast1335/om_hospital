@@ -18,4 +18,18 @@
             action="action_hospital_patient"
             sequence="0"
     />
+    <menuitem
+            id="menu_patient_appooiment"
+            name="patient details"
+            parent="menu_patient_master"
+            action="action_hospital_appooiment"
+            sequence="1"
+    />
+    <menuitem
+            id="menu_female_patient"
+            name="Female patient"
+            parent="menu_patient_master"
+            action="action_hospital_female_patient"
+            sequence="2"
+    />
 </odoo>
