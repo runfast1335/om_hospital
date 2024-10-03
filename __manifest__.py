@@ -16,6 +16,7 @@
         'views/female_patient_view.xml',
         'views/patient_view.xml',
         'views/menu.xml',
+        'report/report_total_patient.xml'
     ],
     'demo': [],
     'installable': True,
@@ -24,4 +25,5 @@
     'assets': {},
 
 }
+
 
