@@ -13,22 +13,60 @@
         <field name="binding_model_id" ref="model_hospital_patient"/>
         <field name="binding_type">report</field>
     </record>
-
     <template id="total_patient">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
-                <t t-call="web.external_layout">
-                    <div class="page">
-                        <h1>hello word!!</h1>
-                        <h1 t-field="doc.name"/>
-                        <h2 t-field="doc.name"/>
-                        <h3 t-field="doc.name"/>
-                        <h4 t-field="doc.name"/>
-                        <h5 t-field="doc.name"/>
-                        <span t-field="doc.name"/>
-                    </div>
-                </t>
+                <t t-call="om_hospital.sub_patient"/>
             </t>
+        </t>
+    </template>
+    <template id="sub_patient">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <t t-call="om_hospital.base_attf_tag_condition"/>
+<!--                <t t-call="om_hospital.base_variabele"/>-->
+<!--                <t t-call="om_hospital.base_condition"/>-->
+<!--                <t t-call="om_hospital.base_foreach"/>-->
+            </div>
+        </t>
+    </template>
+    <template id="base_attf_tag_condition">
+        <h1>hello</h1>
+        <p t-attf-style="background-color:{{doc.name if doc.name else 'yellow'}};">
+            this is the dynamic color changes....
+        </p>
+    </template>
+    <template id="base_variabele">
+        <h1>hello word!!</h1>
+        <span t-field="doc.name"/>
+        <h1 t-field="doc.name"/>
+        <h2 t-field="doc.name"/>
+        <h3 t-field="doc.name"/>
+        <h4 t-field="doc.name"/>
+        <h5 t-field="doc.name"/>
+    </template>
+    <template id="base_condition">
+                <!--                        <t t-if="doc.name == 'ger'">-->
+                <!--                            <p>yes this is <span t-esc="doc.name"/> </p>-->
+                <!--                        </t>-->
+                <!--                        <t t-elif="doc.name == 'asd'">-->
+                <!--                            <p><span t-esc="doc.name" /> my favorit person </p>-->
+                <!--                        </t>-->
+                <!--                        <t t-else="">-->
+                <!--                            <p>no this is not ger</p>-->
+                <!--                            <p>this is <span t-esc="doc.name" /></p>-->
+                <!--                        </t>-->
+                <p t-if="doc.name == 'ger'">yes this is<span t-esc="doc.name"/></p>
+                <p t-elif="doc.name == 'asd'"><span t-esc="doc.name"/>my favorit person</p>
+                <p t-else=""><p>no this is not ger</p>this is<span t-esc="doc.name"/>
+                </p>
+    </template>
+    <template id="base_foreach">
+        <t t-foreach="[1,2,3,4,5,6,7,8,9,10]" t-as="rec">
+            <h1 t-esc="rec"/>
+            khane haye har araye ra bar migardoone =<span t-esc="rec_index"/>
+            aya avalin index hast?<span t-esc="rec_first"/>
+            aya akharin index hast?<span t-esc="rec_last"/>
         </t>
     </template>
 </odoo>
