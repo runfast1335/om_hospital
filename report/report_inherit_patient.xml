@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <template inherit_id="om_hospital.sub_patient" id="sub_patient_extend">
+        <xpath expr="//div[hasclass('page')]" position="replace">
+            <div class="page">
+                <h1>hello dear im hear</h1>
+            </div>
+        </xpath>
+    </template>
+</odoo>
