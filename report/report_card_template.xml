@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    <record id="card_report_tamplate" model="ir.actions.report">
+        <field name="name">کاستوم</field>
+        <field name="model">hospital.patient</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">om_hospital.card_patient</field>
+        <field name="report_file">om_hospital.card_patient</field>
+        <field name="print_report_name">'tamlate'</field>
+        <field name="binding_model_id" ref="model_hospital_patient"/>
+        <field name="binding_type">report</field>
+        <field name="paperformat_id" ref="om_hospital.hospital_a4_landscape"/>
+    </record>
+
+    <template id="card_patient">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="doc">
+                <div>
+                    <table style="width:240pt; height:150pt; border: 2pt solid black; border-collapse:seprate; border-radius:8pt; margin:5pt; ">
+                        <tr>
+                            <td>
+                                <t t-esc="doc.gender"/>
+                            </td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <th>
+                                            <t t-esc="doc.name"/>
+                                        </th>
+                                        <th>
+                                           <t t-esc="doc.age"/>
+                                        </th>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

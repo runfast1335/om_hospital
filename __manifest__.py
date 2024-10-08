@@ -19,6 +19,7 @@
         'data/paperformat.xml',
         'report/report_total_patient.xml',
         'report/report_inherit_patient.xml',
+        'report/report_card_template.xml',
     ],
     'demo': [],
     'installable': True,
