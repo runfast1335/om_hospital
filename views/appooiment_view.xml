@@ -13,7 +13,7 @@
             </p>
         </field>
     </record>
-        <record id="view_hospital_appooiment_form" model="ir.ui.view">
+    <record id="view_hospital_appooiment_form" model="ir.ui.view">
         <field name="name">hospital.form</field>
         <field name="model">hospital.appooiment</field>
         <field name="arch" type="xml">
@@ -23,18 +23,35 @@
                         <group>
                             <field name="patient_id"/>
                             <field name="ref"/>
-                            <field name="gender"/>
-                            <field name="booking_date"/>
                         </group>
                         <group>
                             <field name="appooiment_time"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="prescription" name="prescription">
+                            <field name="gender"/>
+                        </page>
+                        <page string="test1" name="test1">
+
+                        </page>
+                        <page string="test2" name="test2">
+
+                        </page>
+                    </notebook>
+                    <notebook>
+                        <page string="pharmacy" name="pharmacy">
+                            <field name="booking_date"/>
+                        </page>
+                        <page string="test1" name="test1">
+
+                        </page>
+                    </notebook>
                 </sheet>
                 <div class="oe_chatter">
-                        <field name="message_follower_ids" groups="base.group_user"/>
-                        <field name="activity_ids"/>
-                        <field name="message_ids"/>
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
                 </div>
             </form>
         </field>
