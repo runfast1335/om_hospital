@@ -21,7 +21,9 @@
                     <group>
                         <group>
                             <field name="name"/>
+                            <field name="date_of_birth"/>
                             <field name="age"/>
+                            <field name="appointment_id"/>
                         </group>
                         <group>
                             <field name="ref"/>
@@ -61,8 +63,8 @@
                 <field name="age"/>
                 <filter name="filter_male" string="Male" domain="[('gender','=','male')]"/>
                 <filter name="filter_Female" string="Female" domain="[('gender','=','female')]"/>
-                <separator/>
-                <filter name="filter_Kids" string="Kids" domain="[('age','&lt;=', 18)]"/>
+<!--                <separator/>-->
+<!--         چون فیلد محاسبه ای هست نمینتوان فیلتر کرد       <filter name="filter_Kids" string="Kids" domain="[('age','&lt;=', 18)]"/>-->
                 <separator/>
                 <filter name="filter_archived" string="Archived" domain="[('active','=', False)]"/>
                 <group>
