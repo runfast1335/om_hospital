@@ -1,2 +1,9 @@
 https://www.odoo.com/pl_PL/forum/pomoc-1/how-can-we-make-a-field-readonly-based-on-group-and-state-115472
 https://www.odoo.com/pl_PL/forum/pomoc-1/xpath-add-attribute-value-instead-of-replacing-it-125230
+
+<xpath expr="//field[@name='partner_id']" position="attributes">
+     <attribute name="attrs">{'readonly': [('state','=','sent')]}</attribute>
+</xpath>
+
+
+https://stackoverflow.com/questions/37958004/odoo-how-make-entire-form-readonly-when-it-moves-to-quotaion-sent-state-using
