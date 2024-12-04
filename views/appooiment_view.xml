@@ -17,7 +17,7 @@
         <field name="name">hospital.form</field>
         <field name="model">hospital.appooiment</field>
         <field name="arch" type="xml">
-            <form>
+            <form duplicate="0">
                 <sheet>
                     <group>
                         <group>
