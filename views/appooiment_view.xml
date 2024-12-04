@@ -19,7 +19,7 @@
         <field name="arch" type="xml">
             <form duplicate="0">
                 <sheet>
-                    <div class="oe_title" >
+                    <div class="oe_title">
                         <h1>
                             <field name="priority" widget="priority" class="mr-3"/>
                         </h1>
@@ -37,19 +37,8 @@
                         <page string="prescription" name="prescription">
                             <field name="gender"/>
                         </page>
-                        <page string="test1" name="test1">
-
-                        </page>
-                        <page string="test2" name="test2">
-
-                        </page>
-                    </notebook>
-                    <notebook>
                         <page string="pharmacy" name="pharmacy">
                             <field name="booking_date"/>
-                        </page>
-                        <page string="test1" name="test1">
-
                         </page>
                     </notebook>
                 </sheet>
