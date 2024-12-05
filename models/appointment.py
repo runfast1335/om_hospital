@@ -13,6 +13,7 @@ class HospitalAppooiment(models.Model):
     gender = fields.Selection(related="patient_id.gender", )  # readonly=False
     appooiment_time = fields.Datetime(string="appooiment time", default=fields.Date.today())
     booking_date = fields.Date(string="booking date", default=fields.Date.today())
+    prescription = fields.Html(string="Prescription")
     ref = fields.Char(string="Refrence", readonly=True,
                       help="refrenc of pation record")
     priority = fields.Selection([

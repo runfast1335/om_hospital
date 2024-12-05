@@ -49,7 +49,7 @@
                     </group>
                     <notebook>
                         <page string="prescription" name="prescription">
-                            <field name="gender"/>
+                            <field name="prescription" options="{'collaborative':True}"/>
                         </page>
                         <page string="pharmacy" name="pharmacy">
                             <field name="booking_date"/>
