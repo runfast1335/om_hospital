@@ -22,9 +22,11 @@
                     <button name="action_in_consultation" string="in consultation" type="object"
                             states="draft"/>
                     <button name="action_done" string="Done" type="object"
-                            states="in_consultation" class="oe_highlight"/>
+                            states="in_consultation" class="oe_highlight"
+                            data-hotkey="v"/>
                     <button name="action_cancel" string="Cancel" type="object"
-                            states="draft,in_consultation"/>
+                            states="draft,in_consultation"
+                            data-hotkey="z"/>
                     <button name="action_draft" string="reset to draft" type="object"
                             states="cancel" class="oe_highlight"/>
 <!--                    options="{'clickable': '1'}"  قابلیت کلیک بر روی استیت-->
