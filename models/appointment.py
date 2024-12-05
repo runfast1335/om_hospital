@@ -1,3 +1,5 @@
+from PIL.Image import effect_noise
+
 from odoo import models, fields, api
 
 
@@ -30,3 +32,10 @@ class HospitalAppooiment(models.Model):
 
     def object_button(self):
         print("testttttttttttttt sucses \n\n\n")
+        return {
+            'effect':{
+                'fadeout': 'slow',
+                'message': 'click sucssesful',
+                'type': 'rainbow_man',
+            }
+        }
