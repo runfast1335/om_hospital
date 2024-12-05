@@ -72,6 +72,12 @@
                 <field name="gender"/>
                 <field name="booking_date"/>
                 <field name="appooiment_time"/>
+                <field name="state"
+                       decoration-success="state in 'done'"
+                       decoration-info="state in 'draft'"
+                       decoration-warning="state in 'in_consultation'"
+                       decoration-danger="state in 'cancel'"
+                       widget="badge"/>
             </tree>
         </field>
     </record>
