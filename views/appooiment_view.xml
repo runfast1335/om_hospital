@@ -41,6 +41,7 @@
                             <button name="object_button" string="object test" type="object"
                                     class="oe_highlight"/>
                             <button name="%(om_hospital.action_hospital_patient)d"
+                                    confirm="are you shur to open pation"
                                     string="action test" type="action" class="oe_highlight"/>
                         </group>
                     </group>
