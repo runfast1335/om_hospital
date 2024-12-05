@@ -19,6 +19,8 @@
         <field name="arch" type="xml">
             <form duplicate="0">
                 <header>
+                    <button name="developer_action" string="dev" type="object"
+                            groups="base.group_no_one" class="oe_highlight"/>
                     <button name="action_in_consultation" string="in consultation" type="object"
                             states="draft"/>
                     <button name="action_done" string="Done" type="object"

@@ -62,6 +62,9 @@ class HospitalAppooiment(models.Model):
         for rec in self:
             rec.state = "draft"
 
+    def developer_action(self):
+        print('dev dooooooooooooo \n\n\n')
+
 
 
 class AppointmentPharmacyLines(models.Model):
