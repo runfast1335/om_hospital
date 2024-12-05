@@ -48,6 +48,7 @@
                             <field name="booking_date" default_focus="1"/>
                         </group>
                         <group>
+                            <field name="hide_sales_price"/>
                             <field name="appooiment_time"/>
                             <button name="object_button" string="object test" type="object"
                                     help="داخل لاگ کت یک پرینت نمایش میدهد"
@@ -66,7 +67,8 @@
                             <field name="pharmacy_lines_ids" >
                                 <tree editable="bottom">
                                     <field name="product_id"/>
-                                    <field name="price_unit"/>
+                                    <field name="price_unit"
+                                    attrs="{'column_invisible': [('parent.hide_sales_price', '=', True)]}"/>
                                     <field name="qty"/>
                                 </tree>
                                 <form>
