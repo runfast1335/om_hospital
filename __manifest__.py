@@ -9,7 +9,7 @@
     # summary: yek tosif az karkarde module hast
     'summary': 'hospital management system',
     'description': """hospital management system""",
-    'depends': ['mail'],
+    'depends': ['mail','product'],
     'data': [
         'security/ir.model.access.csv',
         'views/appooiment_view.xml',

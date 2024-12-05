@@ -29,7 +29,7 @@
                             data-hotkey="z"/>
                     <button name="action_draft" string="reset to draft" type="object"
                             states="cancel" class="oe_highlight"/>
-<!--                    options="{'clickable': '1'}"  قابلیت کلیک بر روی استیت-->
+                    <!--                    options="{'clickable': '1'}"  قابلیت کلیک بر روی استیت-->
                     <field name="state" widget="statusbar" nolabel="1"
                            statusbar_visible="done,draft,in_consultation" class="oe_highlight"/>
                 </header>
@@ -63,7 +63,20 @@
                                    options="{'collaborative':True,'resizable':True}"/>
                         </page>
                         <page string="pharmacy" name="pharmacy">
-                            <field name="booking_date"/>
+                            <field name="pharmacy_lines_ids" >
+                                <tree editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="price_unit"/>
+                                    <field name="qty"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="product_id"/>
+                                        <field name="price_unit"/>
+                                        <field name="qty"/>
+                                    </group>
+                                </form>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>
@@ -80,10 +93,10 @@
         <field name="model">hospital.appooiment</field>
         <field name="arch" type="xml">
             <tree sample="1"
-                    decoration-success="state in 'done'"
-                    decoration-info="state in 'draft'"
-                    decoration-warning="state in 'in_consultation'"
-                    decoration-danger="state in 'cancel'"
+                  decoration-success="state in 'done'"
+                  decoration-info="state in 'draft'"
+                  decoration-warning="state in 'in_consultation'"
+                  decoration-danger="state in 'cancel'"
             >
                 <field name="patient_id"/>
                 <field name="gender"/>
