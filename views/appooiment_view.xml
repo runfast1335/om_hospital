@@ -69,7 +69,7 @@
         <field name="name">hospital.tree</field>
         <field name="model">hospital.appooiment</field>
         <field name="arch" type="xml">
-            <tree
+            <tree sample="1"
                     decoration-success="state in 'done'"
                     decoration-info="state in 'draft'"
                     decoration-warning="state in 'in_consultation'"
