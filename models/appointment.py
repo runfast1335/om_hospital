@@ -16,8 +16,12 @@ class HospitalAppooiment(models.Model):
         ('0', 'Normal'),
         ('1', 'Low'),
         ('2', 'High'),
-        ('3', 'Very High')], string="Priority",
-        help='Gives the sequence order when displaying a list of MRP documents.')
+        ('3', 'Very High')], string="Priority",)
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('in_consultation', 'In consultation'),
+        ('done', 'Done'),
+        ('cancel', 'cancel')], string="string",default='draft',required=True)
 
     @api.onchange("patient_id")
     def onchange_patient_id(self):
