@@ -39,6 +39,7 @@
                         <group>
                             <field name="appooiment_time"/>
                             <button name="object_button" string="object test" type="object"
+                                    help="داخل لاگ کت یک پرینت نمایش میدهد"
                                     class="oe_highlight"/>
                             <button name="%(om_hospital.action_hospital_patient)d"
                                     confirm="are you shur to open pation"
