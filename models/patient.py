@@ -18,6 +18,8 @@ class Hospitalpatient(models.Model):
     active = fields.Boolean(string="Active", default=True)
     appointment_id = fields.Many2one("hospital.appooiment",
                                      string="Appooiment")
+    image = fields.Image(string="Image")
+
 
     def _compute_age(self):
         for rec in self:
