@@ -37,7 +37,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name" string="patient name"/>
-                <field name="color"/>
+                <field name="color" widget="color_picker"/>
                 <field name="active"/>
             </tree>
         </field>
