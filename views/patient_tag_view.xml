@@ -22,6 +22,7 @@
                             <field name="name"/>
                         </group>
                         <group>
+                            <field name="color" widget="color_picker"/>
                             <field name="active" widget="boolean_toggle"/>
                         </group>
                     </group>
@@ -35,6 +36,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name" string="patient name"/>
+                <field name="color"/>
                 <field name="active"/>
             </tree>
         </field>
