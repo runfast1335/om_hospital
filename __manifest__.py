@@ -15,6 +15,7 @@
         'views/appooiment_view.xml',
         'views/female_patient_view.xml',
         'views/patient_view.xml',
+        'views/patient_tag_view.xml',
         'views/menu.xml',
         'data/paperformat.xml',
         'report/report_total_patient.xml',
