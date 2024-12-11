@@ -19,6 +19,7 @@ class Hospitalpatient(models.Model):
     appointment_id = fields.Many2one("hospital.appooiment",
                                      string="Appooiment")
     image = fields.Image(string="Image")
+    tag_ids = fields.Many2many(comodel_name='patient.tag', string='tags')
 
 
     def _compute_age(self):
